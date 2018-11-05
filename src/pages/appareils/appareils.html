@@ -1,18 +1,17 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>Appareils</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-    <button ion-button (click)="onLoadAppareil('Machine à laver')">Machine à laver</button>
-    <button ion-button (click)="onLoadAppareil('Télévision')">Télévision</button>
-    
-    <ion-list>
-      <button ion-item *ngFor="let appareil of appareilsList" (click)="onLoadAppareil(appareil)">
-        {{ appareil.name }}
-      </button>
-    </ion-list>
-  </ion-content>
-  
- 
+  <ion-navbar>
+    <ion-title>Appareils</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item
+            icon-start
+            *ngFor="let appareil of appareilsList; let i = index"
+            (click)="onLoadAppareil(i)">
+      <ion-icon name="power" [color]="appareil.isOn ? 'secondary' : 'danger'"></ion-icon>
+      {{ appareil.name }}
+    </button>
+  </ion-list>
+</ion-content>
