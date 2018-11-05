@@ -7,13 +7,15 @@ import { NavParams } from 'ionic-angular';
 })
 export class SingleAppareilPage implements OnInit {
 
-  name: string;
-
+  appareil: {
+    name: string,
+    description: string[]
+  };
   constructor(public navParams: NavParams) {
   }
 
   ngOnInit() {
-    this.name = this.navParams.get('appareilName');
+    this.appareil  = this.navParams.get('appareil');
   }
 
 }
