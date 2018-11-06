@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController ,NavController} from 'ionic-angular';
 import { SingleAppareilPage } from './single-appareil/single-appareil';
 import { Appareil } from '../../models/Appareil';
 import { AppareilsService } from '../../services/appareils.service';
+import {LineChartsPage} from '../line-charts/line-charts'
+
 @Component({
   selector: 'page-appareils',
   templateUrl: 'appareils.html'
@@ -12,7 +14,11 @@ export class AppareilsPage {
   appareilsList: Appareil[];
 
   constructor(private modalCtrl: ModalController,
-    private appareilsService: AppareilsService) {}
+    private appareilsService: AppareilsService,public navCtrl: NavController) {}
+
+    goLineChart(){
+      this.navCtrl.push(LineChartsPage)
+    }
 
     ionViewWillEnter() {
       this.appareilsList = this.appareilsService.appareilsList.slice();
