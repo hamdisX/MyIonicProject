@@ -44,6 +44,7 @@ export class LineChartsPage {
         }]
     }
   }
+  const x = [65, 65, 65, 65, 56, 55, 40]
     const data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -66,7 +67,7 @@ export class LineChartsPage {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [65, 59, 80, 81, 56, 55, 40],
+          data: x,
           spanGaps: false,
           yAxisID: 'first-y-axis'
 
